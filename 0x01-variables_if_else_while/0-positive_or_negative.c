@@ -1,30 +1,30 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*
- * main - Entry point.
+
+/**
+ * main - program entry point
  *
- * Return:0 if no error, non-zero value if error.
+ * Description: Stores a random number in n and print the number and condition
+ * Return: 0 (success)
  */
 int main(void)
 {
 	int n;
-	int ldigit;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	ldigit = n % 10;
-	if (ldigit > 5)
+	if (n > 0)
 	{
-		printf("Last digit of %d is %d  and is greater than 5\n", n, ldigit);
+		printf("%d %s", n, "is positive\n");
 	}
-	else if (ldigit == 0)
+	else if (n == 0)
 	{
-		printf("Last digit of %d is %d and is 0\n", n, ldigit);
+		printf("%d %s", n, "is zero\n");
 	}
-	else if (ldigit < 6 && ldigit != 0)
+	else
 	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, ldigit);
+		printf("%d %s", n, "is negative\n");
 	}
 	return (0);
 }
